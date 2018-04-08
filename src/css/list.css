@@ -1,9 +1,230 @@
+main .title {
+  background: #F2F1EF;
+  box-shadow: 0 2px 10px #ddd inset;
+}
+
+main .title .container {
+  height: 36px;
+  line-height: 36px;
+}
+
+main .title .container p {
+  float: left;
+  font-size: 13px;
+}
+
 main .mainLeft {
+  padding-top: 20px;
   width: 200px;
   height: 900px;
 }
 
 main .mainRight {
   width: 970px;
-  height: 300px;
+  padding-top: 20px;
+}
+
+main .mainRight .keyword {
+  width: 970px;
+  border: 1px solid #ddd;
+  border-bottom: 0 none;
+}
+
+main .mainRight .keyword ul {
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+
+main .mainRight .keyword ul li {
+  float: left;
+  margin-right: 15px;
+  line-height: 40px;
+}
+
+main .mainRight .keyword ul li a {
+  color: #666560;
+  font-size: 12px;
+  padding: 2px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+main .mainRight .keyword ul li .active {
+  background: #E44848;
+  color: #fff;
+}
+
+main .mainRight .keyword ul li a:hover {
+  background: #E44848;
+  color: #fff;
+}
+
+main .mainRight .keyword ul li input {
+  width: 55px;
+  height: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 12px;
+}
+
+main .mainRight .keyword ul li button {
+  padding: 2px 10px;
+  font-size: 12px;
+  color: #666560;
+}
+
+main .mainRight .keyword ul li:nth-of-type(1) {
+  width: 71px;
+  color: #323534;
+  font-weight: 600;
+  font-size: 13px;
+  margin-right: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 2px;
+  padding-left: 10px;
+}
+
+main .mainRight .Sort {
+  border-bottom: 1px solid #ddd;
+  margin-top: 50px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+main .mainRight .Sort li {
+  float: left;
+}
+
+main .mainRight .Sort li a {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 13px;
+  line-height: 30px;
+  border-bottom: 3px solid transparent;
+}
+
+main .mainRight .Sort li .sortActive {
+  color: #E44848;
+  font-weight: 600;
+  border-bottom-color: #E44848;
+}
+
+main .mainRight .Sort li a:hover {
+  color: #E44848;
+  font-weight: 600;
+  border-bottom-color: #E44848;
+}
+
+main .mainRight .goodsList li {
+  height: 420px;
+  width: 206px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  margin: 0 48px 10px 0;
+}
+
+main .mainRight .goodsList li img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main .mainRight .goodsList li .con {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  padding: 0 15px;
+}
+
+main .mainRight .goodsList li .con .g_price {
+  float: left;
+  font-size: 16px;
+}
+
+main .mainRight .goodsList li .con .g_volume {
+  float: right;
+  font-size: 12px;
+  color: #999;
+}
+
+main .mainRight .goodsList li .con .g_des {
+  font-size: 12px;
+  color: #999;
+  line-height: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+main .mainRight .goodsList li .con .g_special {
+  color: #E44848;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+main .mainRight .goodsList li .con .g_stores {
+  font-size: 12px;
+  line-height: 25px;
+  padding-left: 20px;
+  background: url(../imgs/sole.png) left center no-repeat;
+}
+
+main .mainRight .goodsList li .con .g_Self-support {
+  font-size: 12px;
+  color: #fff;
+  background: #E44848;
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+main .mainRight .goodsList li .con .g_aPrice {
+  padding: 1px 5px;
+  border-radius: 8px;
+  color: #E44848;
+  border: 1px solid #E44848;
+  font-size: 12px;
+}
+
+main .mainRight .goodsList li .con .botHide {
+  position: absolute;
+  left: 8px;
+  bottom: -10px;
+  display: none;
+}
+
+main .mainRight .goodsList li .con .botHide span {
+  background: #fff;
+  width: 60px;
+  float: left;
+  font-size: 12px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+main .mainRight .goodsList li .con .botHide span:last-child {
+  border-left: 0 none;
+  color: #E44848;
+}
+
+main .mainRight .goodsList li:nth-of-type(4n) {
+  margin: 0;
+  float: left;
+}
+
+main .mainRight .goodsList li:hover {
+  box-shadow: 0 0 5px 2px #ccc;
+}
+
+main .mainRight .goodsList li:hover .botHide {
+  display: block;
+}
+
+main .bot {
+  height: 200px;
+  background: #999;
 }
