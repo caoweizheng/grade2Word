@@ -1,0 +1,9 @@
+main .mainLeft {
+  width: 200px;
+  height: 900px;
+}
+
+main .mainRight {
+  width: 970px;
+  height: 300px;
+}

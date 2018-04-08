@@ -1,0 +1,95 @@
+.carousel_C img {
+    display: block;
+}
+.carousel_C {
+    position: relative;
+    overflow: hidden;
+}
+.carousel_C ul {
+    position: absolute;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.carousel_C ul.horizontal li {
+    float: left;
+}
+.carousel_C ul.fade li {
+    position: absolute;
+    left: -158px;
+    top: 0;
+}
+.carousel_C ul.fade li img{
+    transform-origin:50%,50%;
+    transition: all 1.5s;
+    transform:scale(1.1); 
+}
+.carousel_C .page {
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 0;
+    padding: 10px;
+}
+.carousel_C .page span {
+    display: inline-block;
+    margin: 0 5px;
+    width: 20px;
+    height: 2px;
+    background-color: #6C6C6A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.carousel_C .page span.active {
+    width:40px;
+    background-color: #fff;
+}
+
+
+.carousel_C .page2 {
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 10px;
+}
+.carousel_C .page2 span {
+    display: inline-block;
+    margin: 0 5px;
+    width: 8px;
+    height: 8px;
+    border-radius:50%;
+    background-color: #6C6C6A;
+}
+.carousel_C .page2 span.active2 {
+    background-color: #C81023;
+}
+
+.carousel_C .btnLeft{
+    position:absolute;
+    left: 220px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.carousel_C .btnRight{
+    position:absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+.carousel_C:hover .btnRight{
+    display:block;
+
+}
+.carousel_C:hover .btnLeft{
+    display:block;
+
+}
+.carousel_C .btnRight:hover{
+    background:url(../../imgs/wb_r2.png);
+}
+.carousel_C .btnLeft:hover{
+    background:url(../../imgs/wb_l2.png);
+}

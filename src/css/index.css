@@ -1,0 +1,247 @@
+@charset "UTF-8";
+.nav {
+  height: 430px;
+  overflow: hidden;
+}
+
+.promise {
+  height: 66px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 28px;
+}
+
+.promise .container {
+  height: 55px;
+  background: url(../imgs/wb_promise.png);
+}
+
+.hot {
+  margin-bottom: 60px;
+}
+
+.hot .container {
+  height: 150px;
+}
+
+.hot .container ul li {
+  float: left;
+  margin-right: 4px;
+  overflow: hidden;
+  width: 297px;
+}
+
+.hot .container ul li img {
+  display: block;
+}
+
+.hot .container ul li:last-child {
+  margin-right: 0;
+}
+
+.recommend .container ul li .bot h4, .popularity .container .u1 li .bot h4, .special .container ul li .bot h4 {
+  color: #666560;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.recommend .container ul li .bot p, .special .container ul li .bot p, .share .container ul li .bot p {
+  color: #B4B0AA;
+  font-size: 12px;
+}
+
+.recommend .container h2, .popularity .container h2, .share .container h2 {
+  font-weight: 700;
+  font-size: 21px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.brands .container ul:last-child, .popularity .container .u2 {
+  background: #F2F1EF;
+  height: 104px;
+}
+
+.brands .container ul:last-child li, .popularity .container .u2 li {
+  float: left;
+  margin-right: 12px;
+}
+
+.brands .container ul:last-child li:last-child, .popularity .container .u2 li:last-child {
+  margin-right: 0;
+}
+
+.brands .container {
+  border: 1px solid #F2F1EF;
+}
+
+.brands .container ul:first-child {
+  height: 368px;
+}
+
+.brands .container ul:first-child li {
+  position: relative;
+  float: left;
+  background: #fff;
+  border-left: 1px solid #F2F1EF;
+  border-bottom: 1px solid #F2F1EF;
+}
+
+.brands .container ul:first-child li img {
+  display: block;
+}
+
+.brands .container ul:first-child li p a, .brands .container ul:first-child li h4 a {
+  position: absolute;
+  left: 38px;
+  top: 50px;
+  color: #666560;
+}
+
+.brands .container ul:first-child li h4 a {
+  font-weight: 600;
+}
+
+.brands .container ul:first-child li p a {
+  top: 70px;
+  font-size: 13px;
+}
+
+.recommend .container ul li .bot, .popularity .container .u1 li .bot, .special .container ul li .bot, .share .container ul li .bot {
+  width: 395px;
+  height: 64px;
+  position: absolute;
+  padding-top: 26px;
+  bottom: 0;
+  left: 0;
+  background: #F2F1EF;
+  text-align: center;
+  z-index: 2;
+}
+
+.recommend .container ul li, .popularity .container .u1 li, .special .container ul li, .share .container ul li {
+  position: relative;
+  height: 395px;
+  height: 330px;
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.recommend .container ul li img {
+  display: block;
+  transition: all 0.8s;
+}
+
+.recommend .container ul li img:hover {
+  transform: scale(1.2);
+}
+
+.recommend .container ul li:nth-child(3),
+.recommend .container ul li:last-child {
+  margin-right: 0;
+  float: right;
+}
+
+.popularity .container .u1 li {
+  width: 592px;
+}
+
+.popularity .container .u1 li img {
+  display: block;
+  transition: all 0.8s;
+}
+
+.popularity .container .u1 li img:hover {
+  opacity: 0.8;
+}
+
+.popularity .container .u1 li .bot {
+  width: 592px;
+}
+
+.popularity .container .u1 li:nth-child(2),
+.popularity .container .u1 li:last-child {
+  margin-right: 0;
+  float: right;
+}
+
+.popularity .container .u2 {
+  background: #F2F1EF;
+  margin-bottom: 56px;
+}
+
+.special .container {
+  background: #F2F1EF;
+  padding: 30px 33px;
+  height: 404px;
+  box-sizing: border-box;
+}
+
+.special .container ul li {
+  margin-right: 31px;
+}
+
+.special .container ul li img {
+  display: block;
+  transition: all 0.8s;
+}
+
+.special .container ul li img:hover {
+  transform: scale(1.1);
+}
+
+.special .container ul li .bot {
+  width: 260px;
+  background: #fff;
+}
+
+.special .container ul li .bot p {
+  color: #6F6D68;
+}
+
+.special .container ul li:last-child {
+  margin-right: 0;
+  float: right;
+}
+
+/* 晒单分享 */
+.share {
+  margin-bottom: 40px;
+}
+
+.share .container ul li {
+  width: 292px;
+  height: 317px;
+  margin-right: 10px;
+}
+
+.share .container ul li img {
+  display: block;
+  transition: all 0.8s;
+}
+
+.share .container ul li img:hover {
+  transform: scale(1.1);
+}
+
+.share .container ul li .bot {
+  width: 292px;
+  height: 27px;
+  padding-top: 10px;
+}
+
+.share .container ul li .bot p {
+  font-size: 14px;
+  color: #6F6D68;
+}
+
+.share .container ul li:last-child {
+  margin-right: 0;
+  float: right;
+}
+
+.bot .container {
+  height: 300px;
+  background: red;
+}
