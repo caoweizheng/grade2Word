@@ -1,9 +1,8 @@
-                     
-
+                      
 require(['config'],function(){
          
    require(['jquery','base','carousel'],function($){
-         
+                 
         // 轮播图
         $('.mainLeft .banner').carousel_c({
             "width":210,
@@ -53,7 +52,7 @@ require(['config'],function(){
 
                     return `
                             <li>
-                                <img src="${goods.imgUrl}"/>
+                                <a href="details.html?${goods.gid}"><img src="${goods.imgUrl}"/></a>
 
                                 <div class="con">
                                     <p class="clearfix">
@@ -157,7 +156,6 @@ require(['config'],function(){
         }
 
         // 根据品牌搜索相应的数据
-        let kwBrands = $('.kwBrands');
 
         $('.kwBrands').on('click','li',function(){
 
@@ -169,18 +167,91 @@ require(['config'],function(){
             g_xhr.send();
                  
         });
+
+        
+        // 
+        $('.btn_search').on('click',function(){
+
+            console.log(999)
+                 
+
+            g_xhr.open('get','../api/goodsList.php?type=Brands&brand=' + $('.searchVal').text(),true);
+
+            g_xhr.send();
+        })
+
     
-    //  $(window).on('load',function(){
-         
-    //     //二级菜单的显示与隐藏
-    //     $('.tab1>li').children('ul').hide();
 
-    //     $('.tab1').hover(()=>{
-    //         $('.tab1>li').children('ul').stop().slideDown();
-    //     },()=>{
-    //         $('.tab1>li').children('ul').stop().slideUp();
-    //     })
+        $.ajax({url:"../api/history.php",success:function(res){
+            
+            let data = $.map($.parseJSON(res),function(item){
+                     
+                return `
+                    <li>
+                        <a href="#"><img src="${item.imgUrl}" /></a>
+                        <div class="bot">
+                            <p class="price">&yen;${item.price}</p>
+                            <p class="content">${item.desc}</p>
+                        </div>
 
-    // })
+                    </li>`;
+            })
+            $('<ul/>').append(data).appendTo('.history'); 
+        }});
+
+        // 动态生成热门品牌
+        let hotBrands = '百达翡丽 江诗丹顿 宝珀 宝玑 欧米茄 万国 古驰 积家 劳力士 迪沃斯 卡地亚 天梭 浪琴 赫柏林 美度 阿玛尼 CK DW 精工 卡西欧'.split(' ');
+
+        let _hotBrands = $.map(hotBrands,function(item,idx){
+
+            return `<li><a href="#"><span>${idx+1}</span><span>${item}</span></a></li>`;
+        })
+        // 动态生成热门词
+        let hotWord = 'rolex 卡地亚手表 手表app 手表品牌大全 手表品牌 dw手表 积家 iwc CK手表 沛纳海 卡地亚手表 万国手表 浪琴表价格 欧米茄报价 江诗丹顿手表 世界十大名表 十大名表 卡地亚蓝气球 seiko手表是什么牌子 muehle手表 diesel官网 小红书 依百克'.split(' ');
+
+        let _hotword = $.map(hotWord,function(item){
+            return `<li><a href="#">${item}</a></li>`;
+        })
+
+        $('<ul/>').append(_hotBrands).appendTo('.hotBrands');
+        $('<ul/>').append(_hotword).appendTo('.hotBrands');
+        // 侧边栏鼠标移入切换内容
+        $('.mainLeft').find('h2').hover(function(){
+                          
+            if($(this).index() == 0){
+                if($(this).next('h2')[0] == undefined){   
+                    return;
+                }
+                $(this).css('color','#000');
+                $(this).siblings('h2').css('color','#999')
+                $(this).closest('div').next().show();
+                $(this).closest('div').next().next().hide();
+                
+
+            }else{
+                     
+                $(this).css('color','#000')
+                $(this).siblings('h2').css('color','#999')
+                $(this).closest('div').next().next().show();
+                $(this).closest('div').next().hide();
+            }
+        })
+
+
+
+        // 默认隐藏导航菜单
+        this.timer = setInterval(()=>{
+                 
+            if($('.tab1>li')[0]){     
+                $('.tab1>li').children('ul').hide();
+
+                $('.tab1').hover(()=>{
+                    $('.tab1>li').children('ul').stop().slideDown();
+                },()=>{
+                    $('.tab1>li').children('ul').stop().slideUp();
+                })
+                clearInterval(this.timer);
+            }
+        }, 60);
    })
 })

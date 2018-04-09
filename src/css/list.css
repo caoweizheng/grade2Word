@@ -16,12 +16,168 @@ main .title .container p {
 main .mainLeft {
   padding-top: 20px;
   width: 200px;
-  height: 900px;
+  margin-bottom: 30px;
+}
+
+main .mainLeft .history h2, main .mainLeft .advisory h2, main .mainLeft .hotBrands h2 {
+  background: #F1F1F1;
+  height: 32px;
+  font-weight: 600;
+  font-size: 15px;
+  padding-left: 15px;
+  cursor: default;
+  color: #999;
+  line-height: 32px;
+}
+
+main .mainLeft .history {
+  border: 1px solid #ddd;
+  margin-top: 30px;
+}
+
+main .mainLeft .history ul li {
+  position: relative;
+  height: 286px;
+  width: 200px;
+}
+
+main .mainLeft .history ul li .bot {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  padding: 0 5px;
+}
+
+main .mainLeft .history ul li .bot .price {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+main .mainLeft .history ul li .bot .content {
+  color: #666;
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+main .mainLeft .history ul li img {
+  width: 178px;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+main .mainLeft .advisory {
+  margin: 40px 0;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+main .mainLeft .advisory h2 {
+  width: 84px;
+  float: left;
+}
+
+main .mainLeft .advisory h2:first-child {
+  color: #000;
+}
+
+main .mainLeft .advisory .adv {
+  padding: 10px;
+}
+
+main .mainLeft .advisory .adv li {
+  width: 180px;
+}
+
+main .mainLeft .advisory .adv li a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 30px;
+  color: #666;
+}
+
+main .mainLeft .advisory .adv li a:hover {
+  text-decoration: underline;
+}
+
+main .mainLeft .advisory .promise {
+  display: none;
+  padding: 15px 10px;
+}
+
+main .mainLeft .advisory .promise p {
+  text-indent: 2em;
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+main .mainLeft .hotBrands {
+  border: 1px solid #ddd;
+}
+
+main .mainLeft .hotBrands h2 {
+  width: 84px;
+  float: left;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(1) li {
+  padding: 10px 30px;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(1) li a {
+  font-size: 13px;
+  color: #999;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(1) li a span:first-child {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(1) li a span:last-child:hover {
+  text-decoration: underline;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(2) {
+  padding-left: 5px;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(2) li {
+  display: inline-block;
+  margin: 5px 2px;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(2) li a {
+  padding: 1px 10px;
+  color: #999;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+main .mainLeft .hotBrands ul:nth-of-type(2) li a:hover {
+  border-color: #999;
 }
 
 main .mainRight {
   width: 970px;
   padding-top: 20px;
+  margin-bottom: 30px;
 }
 
 main .mainRight .keyword {
@@ -234,9 +390,4 @@ main .mainRight .goodsList li:hover {
 
 main .mainRight .goodsList li:hover .botHide {
   display: block;
-}
-
-main .bot {
-  height: 200px;
-  background: #999;
 }

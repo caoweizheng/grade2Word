@@ -7,13 +7,15 @@ require.config({
         // 格式：别名:真实路径（基于baseUrl）
         jquery:'../lib/jquery-3.2.1',
         carousel:'../lib/jquery-Carousel_cc/jquery.carousel_cc',
+        list:'list',
         base:'base'
     },
 
     // 配置依赖
     shim:{
         base:['jquery'],
-        carousel:['jquery']
+        carousel:['jquery'],
+        list:['base']
         
     }
 })

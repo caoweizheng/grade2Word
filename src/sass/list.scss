@@ -15,12 +15,158 @@ main{
     .mainLeft{
         padding-top:20px; 
         width: 200px;
-        height: 900px;
+        margin-bottom: 30px;
+        %h2{
+            background:#F1F1F1;
+            height: 32px;
+            font-weight:600;
+            font-size:15px;
+            padding-left: 15px;
+            cursor:default;
+            color:#999;
+            line-height: 32px;
+        }
 
+        .history{
+            border:1px solid #ddd;
+            margin-top:30px;
+            h2{
+                @extend %h2;
+            }
+            ul{
+                li{
+
+                    position:relative;
+                    height:286px;
+                    width: 200px;
+                    .bot{
+                        position:absolute;
+                        bottom: 20px;
+                        left: 10px;
+                        padding:0 5px;
+
+                        .price{
+                            font-size:12px;
+                            line-height: 20px;
+                            font-weight:600;
+                        }
+                        .content{
+                            color:#666;
+                            font-size:13px;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                            overflow: hidden;
+                        }
+                    }
+                    img{
+                        width: 178px;
+                        position:absolute;
+                        left: 50%;
+                        top:20px;
+                        transform:translateX(-50%);
+                        
+                    }
+                }
+            }
+        }
+        
+        .advisory{
+            margin: 40px 0;
+            border:1px solid #ddd;
+            overflow: hidden;
+            h2{
+                @extend %h2;
+                width: 84px;
+                float: left;
+            }
+            h2:first-child{
+                color:#000;
+            }
+            .adv{
+                padding: 10px;
+                li{
+                    width: 180px;
+                    a{
+                        display:block;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                        font-size:13px;
+                        line-height: 30px;
+                        color:#666;
+                    }
+                    a:hover{
+                        text-decoration:underline;
+                    }
+                }
+            }
+
+            .promise{
+                display:none;
+                padding: 15px 10px;
+                p{
+                    text-indent:2em;
+                    font-size:12px;
+                    margin-bottom: 20px;
+                    color:#aaa;
+                }
+            }
+        }
+
+        .hotBrands{
+            border:1px solid #ddd;
+            h2{
+                @extend %h2;
+                width: 84px;
+                float: left;
+            }
+            ul:nth-of-type(1){
+                li{
+                padding: 10px 30px;
+                    a{
+                        font-size:13px;
+                        color:#999;
+                        span:first-child{
+                            display:inline-block;
+                            width: 20px;
+                            text-align:center;
+                            line-height: 20px;
+                            height: 20px;
+                            border:1px solid #ccc;
+                            border-radius:50%;
+                            margin-right: 20px;
+
+                        }
+                        span:last-child:hover{
+                            text-decoration:underline;
+                        }
+                    }
+                }
+            }
+            ul:nth-of-type(2){
+                padding-left: 5px;
+                li{
+                    display:inline-block;
+                    margin: 5px 2px;
+                    a{
+                        padding: 1px 10px;
+                        color:#999;
+                        border:1px solid #ddd;
+                        border-radius:10px;
+                        font-size:13px;
+                    }
+                    a:hover{
+                        border-color:#999;
+                    }
+                }
+            }
+        }
     }
     .mainRight{
         width: 970px;
         padding-top:20px;
+        margin-bottom: 30px;
 
         .keyword{
             width:970px;
@@ -212,9 +358,5 @@ main{
                 }    
             } 
         }
-    }
-    .bot{
-        height: 200px;
-        background:#999;
     }
 }
