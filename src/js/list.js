@@ -1,29 +1,20 @@
-jQuery($=>{
- 
-    $(window).on('load',e=>{
-             
-        // 二级菜单的显示与隐藏
-        $('.tab1>li').children('ul').hide();
+                     
 
-        $('.tab1').hover(()=>{
-            $('.tab1>li').children('ul').stop().slideDown();
-        },()=>{
-            $('.tab1>li').children('ul').stop().slideUp();
-        })
-
-        $('.header').css('box-shadow','0 3px 5px #ccc');  })
-
+require(['config'],function(){
+         
+   require(['jquery','base','carousel'],function($){
+         
         // 轮播图
         $('.mainLeft .banner').carousel_c({
-        "width":210,
-        "height":400,
-        "index":0,
-        "type":'horizontal',
-        "touch":false,
-        "button":false,
-        "className":['page2','active2'],
-        "imgs":['../imgs/wb_lis_ban1.jpg','../imgs/wb_lis_ban2.jpg','../imgs/wb_lis_ban3.jpg','../imgs/wb_lis_ban4.jpg']
-    });
+            "width":210,
+            "height":400,
+            "index":0,
+            "type":'horizontal',
+            "touch":false,
+            "button":false,
+            "className":['page2','active2'],
+            "imgs":['../imgs/wb_lis_ban1.jpg','../imgs/wb_lis_ban2.jpg','../imgs/wb_lis_ban3.jpg','../imgs/wb_lis_ban4.jpg']
+        });
 
         // 关键字搜索模块
         let $kwBrands = $('.kwBrands');
@@ -53,7 +44,7 @@ jQuery($=>{
             if(status.includes(g_xhr.status)){
                 let g_res = $.parseJSON(g_xhr.responseText);
                 $goodsList.html('');
-                     
+                $goodsList.removeClass('nogoods');
                 if(g_res.length == 0){                         
                     $goodsList.addClass('nogoods').html('没有找到相关的商品哟~~~');
                     return;
@@ -116,8 +107,10 @@ jQuery($=>{
 
         //  按价格搜索
         let $priceKW = $('.priceKW');
-
         $priceKW.on('click','a',function(){
+                 
+            $(this).closest('li').siblings().children('a').removeClass('kwActive');
+            $(this).addClass('kwActive');
 
             priceSearch($(this).text());
 
@@ -126,14 +119,17 @@ jQuery($=>{
 
         // 手动输入搜索
         $('#comfirm').on('click',function(){
-            console.log(999)
                  
+            if(($('#pLt').val()+'-'+ $('#pGt').val()).trim() == '-'){
+                return;
+            }
 
             // 获取输入价格范围
-            priceSearch($('#pLt').text()+'-'+ $('#Gt').text());
+            priceSearch($('#pLt').val()+'-'+ $('#pGt').val());
         })
 
-        function priceSearch(priceAround){
+        // 根据价格范围搜索相应的商品
+        function priceSearch(priceAround){                 
 
             // 单项处理
             if(priceAround.indexOf('以下')>=0){
@@ -157,9 +153,34 @@ jQuery($=>{
             g_xhr.open('get','../api/goodsList.php?type=priceSearch&aroundLt='+arr[0]+'&aroundGt='+arr[1],true);
 
             g_xhr.send();
- 
+     
         }
-             
 
+        // 根据品牌搜索相应的数据
+        let kwBrands = $('.kwBrands');
 
+        $('.kwBrands').on('click','li',function(){
+
+            $(this).siblings().children().removeClass('kwActive');
+            $(this).children().addClass('kwActive');
+
+            g_xhr.open('get','../api/goodsList.php?type=Brands&brand=' + $(this).text(),true);
+
+            g_xhr.send();
+                 
+        });
+    
+    //  $(window).on('load',function(){
+         
+    //     //二级菜单的显示与隐藏
+    //     $('.tab1>li').children('ul').hide();
+
+    //     $('.tab1').hover(()=>{
+    //         $('.tab1>li').children('ul').stop().slideDown();
+    //     },()=>{
+    //         $('.tab1>li').children('ul').stop().slideUp();
+    //     })
+
+    // })
+   })
 })

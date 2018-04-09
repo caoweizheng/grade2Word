@@ -413,12 +413,13 @@ s, i, em {
 }
 
 .tab1 li ul li {
-  width: 180px;
+  width: 190px;
   height: 40px;
   line-height: 40px;
   font-weight: 600;
   font-size: 12px;
   padding: 10px;
+  padding-right: 0;
   color: #fff;
   cursor: pointer;
 }

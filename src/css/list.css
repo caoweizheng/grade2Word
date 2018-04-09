@@ -49,7 +49,7 @@ main .mainRight .keyword ul li a {
   vertical-align: middle;
 }
 
-main .mainRight .keyword ul li .active {
+main .mainRight .keyword ul li .kwActive {
   background: #E44848;
   color: #fff;
 }
@@ -57,6 +57,7 @@ main .mainRight .keyword ul li .active {
 main .mainRight .keyword ul li a:hover {
   background: #E44848;
   color: #fff;
+  cursor: pointer;
 }
 
 main .mainRight .keyword ul li input {
@@ -71,6 +72,10 @@ main .mainRight .keyword ul li button {
   padding: 2px 10px;
   font-size: 12px;
   color: #666560;
+}
+
+main .mainRight .keyword ul li button:hover {
+  box-shadow: 0 0 1px 1px #ccc;
 }
 
 main .mainRight .keyword ul li:nth-of-type(1) {

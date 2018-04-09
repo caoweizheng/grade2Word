@@ -7,6 +7,7 @@
     $around = isset($_GET['around']) ? $_GET['around'] : null;
     $aroundLt = isset($_GET['aroundLt']) ? $_GET['aroundLt'] : null;
     $aroundGt = isset($_GET['aroundGt']) ? $_GET['aroundGt'] : null;
+    $brand = isset($_GET['brand']) ? $_GET['brand'] : null;
 
 
 
@@ -14,6 +15,7 @@
         $sql  = "select * from goodsList";
 
     }else if($type == "price"){
+
         $sql  = "select * from goodsList ORDER BY price";
 
     }else if($type == "volume"){
@@ -32,7 +34,12 @@
             $sql  = "select * from goodsList where price between $aroundLt AND $aroundGt";
         }
 
+    }else if($type == 'Brands'){
+        $sql  = "select * from goodsList where  `desc` like '%$brand%'";
     }
+
+
+
 
     // 可以用fetch_all(MYSQLI_ASSOC)方法获取到数据库的全部数据然后返回给前端
     
