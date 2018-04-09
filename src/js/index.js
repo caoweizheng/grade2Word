@@ -55,7 +55,7 @@ jQuery(($)=>{
             // 生成热门榜单内容
             let _hot = $.map(hotItem,item=>{
                 return `<li>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <img src="${item.imgUrl}"/>
                             </a>
                         </li>`;   
@@ -68,12 +68,12 @@ jQuery(($)=>{
 
                 return `<li>
                             <h4>
-                                <a href="#">${item.title}</a>
+                                <a href="../html/list.html">${item.title}</a>
                             </h4>
                             <p>
-                                <a href="#">${item.content}</a>
+                                <a href="../html/list.html">${item.content}</a>
                             </p>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <img src="${item.imgUrl}"/>
                             </a>
                         </li>`;
@@ -87,7 +87,7 @@ jQuery(($)=>{
             let _logos = $.map(brands_logos,item=>{
 
                 return `<li>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <img src="${item.imgUrl}"/>
                             </a>
                         </li>`;
@@ -101,7 +101,7 @@ jQuery(($)=>{
             let _recommend = $.map(recommends,item=>{
 
                 return `<li>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <div class="bot">
                                     <h4>${item.title}</h4>
                                     <p>${item.content}</p>
@@ -119,7 +119,7 @@ jQuery(($)=>{
             let _popularity = $.map(popularity,item=>{
 
                 return `<li>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <div class="bot">
                                     <h4>${item.title}</h4>
                                  </div> 
@@ -135,7 +135,7 @@ jQuery(($)=>{
             let _brands2 = $.map(brands2,item=>{
 
                 return `<li>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <img src="${item.imgUrl}"/>
                             </a>
                         </li>`;
@@ -171,7 +171,7 @@ jQuery(($)=>{
             let _share = $.map(share,item=>{
 
                 return `<li>
-                            <a href="#">
+                            <a href="../html/list.html">
                                 <div class="bot">
                                     <p>${item.content}</p>
                                  </div> 

@@ -46,7 +46,7 @@
                                 </li>
                             </ul>
                             <!-- 价格 -->
-                            <ul>
+                            <ul class="priceKW">
                                 <li>
                                 
                                     <span>价格</span>
@@ -74,10 +74,10 @@
                                 </li>
 
                                 <li>
-                                    <input type="text" /> - <input type="text" />
+                                    <input id="pLt" type="text" /> - <input id="pGt" type="text" />
                                 </li>
                                 <li>
-                                    <button id="confirm">确定</button>
+                                    <button id="comfirm">确定</button>
                                 </li>
 
                             </ul>
@@ -114,238 +114,14 @@
 
                         <div class="Sort clearfix">
                             <ul>
-                                <li><a href="#">综合排序</a></li>
-                                <li><a href="#">销量优先</a></li>
-                                <li><a href="#">价格排序</a></li>
-                                <li><a href="#">新品</a></li>
+                                <li data-sortType="Synthesis"><a>综合排序</a></li>
+                                <li data-sortType="volume"><a>销量优先</a></li>
+                                <li data-sortType="price"><a>价格排序</a></li>
+                                <li data-sortType="new"><a>新品</a></li>
                             </ul>
                         </div>
 
                         <div class="goodsList">
-                            <ul>
-                                <li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li><li>
-                                    <img src="../imgs/wb_list_g1.png"/>
-
-                                    <div class="con">
-                                        <p class="clearfix">
-                                            <span class="g_price">￥3,420</span>
-                                            <span class="g_volume">销量7851</span>
-                                        </p>
-
-                                        <p class="g_des">全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表</p>
-                                        <span class="g_special">80小时动储</span>
-                                        <h4 class="g_stores">天梭旗舰店</h4>
-                                        <span class="g_Self-support">自营</span>
-                                        <span class="g_aPrice">一口价</span>
-
-                                        <div class="botHide">
-                                            <span class="addToLove">加入收藏</span>
-                                            <span class="addToCar">加入购物车</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

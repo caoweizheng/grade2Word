@@ -85,6 +85,7 @@ main{
             margin-bottom: 10px;
             li{
                 float: left;
+
                 a{  
                     display:inline-block;
                     margin-right:30px;
@@ -101,10 +102,15 @@ main{
                     color:#E44848;
                     font-weight:600;
                     border-bottom-color: #E44848;
+                    cursor:pointer;
                 }
             }
         }
-
+        .nogoods{
+            text-align:center;
+            font-size:25px;
+            color:#E44848;
+        }
         .goodsList{
             li{
                 height: 420px;
