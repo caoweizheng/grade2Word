@@ -1,6 +1,6 @@
 #过滤文件夹
 /node_modules/
-/imgs/
+src/imgs/
 
 #过滤文件
 *.zip
