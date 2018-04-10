@@ -1,0 +1,38 @@
+.smallImg{
+
+    position:relative;
+    width: 500px;
+}
+.bigImg{
+    width: 500px;
+    height: 500px;
+    position:absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+.bigImg img{
+    position:absolute;
+    left:0;
+    top: 0;
+
+}
+.mask{
+    width: 500px;
+    height: 500px;
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index:100;
+    background:transparent;
+}
+.mask:hover{
+    cursor:crosshair;
+}
+.zoom{
+    position:absolute;
+    z-index: 99;
+    display:none;
+}

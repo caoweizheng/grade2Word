@@ -347,6 +347,7 @@ s, i, em {
         margin-right:5px;
       }
       .btn_car{
+        position:relative;
         @extend %btn;
         background:url(../imgs/wb_car.png);
       }
@@ -450,17 +451,94 @@ float: left;
 }
 
 .menu{
-  width: 260px;
+  width: 257px;
   position:fixed;
   right: -260px;
   top: 0;
   z-index:20;
+  background:#E9E9E9;
+  border-left:2px solid #666560;
+  .menu_car{
+    background:#FFFFD9;
+    overflow: hidden;
+    padding: 5px;
+    margin-bottom: 20px;
+    h2{
+        float: left;
+        font-size:15px;
+        font-weight:600;
+    }
+    span{
+      display:inline-block;
+      font-weight:600;
+      float: right;
+      cursor:pointer;
+      font-size:18px;
+    }
+    span:hover{
+      color:red;
+    }
+  }
 
-  background:#fff;
+  .menu_login{
+    font-size:12px;
+    background:#E9FBDD;
+    padding: 10px 5px;
+    display:none;
+
+    a{
+      float: right;
+      color:blue;
+    }
+  }
+  .carlist{
+    overflow-x: hidden;
+    ul{
+      li{
+        padding:15px 10px 5px 80px;
+        background: #fff;
+        margin-bottom: 5px;
+        position:relative;
+        img{
+          position:absolute;
+          width: 80px;
+          left: 0;
+          top: 50%;
+          transform:translateY(-50%);
+        }
+        p{
+          font-size:12px;
+          color:#484848;
+          margin-bottom: 15px;
+        }
+        p:nth-of-type(2){
+          span{
+            font-size:12px;
+            font-weight:600;
+          }
+        }
+        .del{
+          font-size:12px;
+          position:absolute;
+          bottom: 20px;
+          right: 20px;
+          display:none;
+          color:blue;
+          cursor:pointer;
+        }
+      }
+      li:hover .del{
+          display:block;
+      }
+    }
+  }
+  .carlist::-webkit-scrollbar{
+    width:0px;
+  }
 
   .service{
     position:absolute;
-    left: -70px;
+    left: -75px;
     top: 30%;
     width: 70px;
     height: 70px;
@@ -473,7 +551,7 @@ float: left;
 
     .serviceCon{
       position:absolute;
-      left: -290px;
+      left: -295px;
       top: 0;
       width: 300px;
       height: 150px;
@@ -543,8 +621,9 @@ float: left;
     width: 45px;
     height: 225px;
     position:absolute;
-    left: -40px;
+    left: -47px;
     top: 60%;
+
 
     li{
       position:relative;
@@ -766,3 +845,19 @@ footer{
         }
       }
 }
+  .goodsQty{
+    width: 20px;
+    height: 20px;
+    text-align:center;
+    line-height: 20px;
+    border-radius:50%;
+    background: #C20100;
+    color:#fff;
+    position:absolute;
+    left: 20px;
+    top: 0;
+    display:block;
+    font-size:12px;
+
+
+  }

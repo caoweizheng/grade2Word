@@ -1,0 +1,81 @@
+header h1 {
+  height: 80px;
+  background: url(../imgs/login_logo.png) no-repeat;
+  margin: 20px 0;
+}
+
+main {
+  height: 490px;
+  padding-top: 90px;
+  background: url(../imgs/login_bg.jpg);
+  background-size: cover;
+}
+
+main .login_box {
+  width: 310px;
+  height: 320px;
+  background: #fff;
+  padding: 44px 40px 26px 40px;
+}
+
+main .login_box header {
+  padding: 0 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+main .login_box header span {
+  font-size: 22px;
+  color: #CC5252;
+  float: left;
+}
+
+main .login_box header span:last-child {
+  color: #808080;
+  float: right;
+}
+
+main .login_box input {
+  width: 300px;
+  height: 44px;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding-left: 10px;
+}
+
+main .login_box .login {
+  display: block;
+  width: 310px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  font-size: 18px;
+  color: #fff;
+  background: #CC5252;
+  margin-bottom: 10px;
+}
+
+main .login_box .regist, main .login_box .forget {
+  color: #999;
+  font-size: 13px;
+}
+
+main .login_box .forget {
+  float: right;
+}
+
+main .login_box .regist:hover, main .login_box .forget:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  background: #fff;
+  padding: 10px 0 40px 0;
+}
+
+footer p {
+  color: #999;
+  font-size: 13px;
+  line-height: 25px;
+}

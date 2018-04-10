@@ -1,7 +1,7 @@
                       
 require(['config'],function(){
          
-   require(['jquery','base','carousel'],function($){
+   require(['jquery','base','carousel','common'],function($){
                  
         // 轮播图
         $('.mainLeft .banner').carousel_c({
@@ -52,7 +52,7 @@ require(['config'],function(){
 
                     return `
                             <li>
-                                <a href="details.html?${goods.gid}"><img src="${goods.imgUrl}"/></a>
+                                <a href="details.html?${goods.gid}.html"><img src="${goods.imgUrl}"/></a>
 
                                 <div class="con">
                                     <p class="clearfix">

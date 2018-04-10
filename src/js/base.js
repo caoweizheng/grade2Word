@@ -1,3 +1,5 @@
+
+var updateCar;
 jQuery(function($){
     // header广告
     $('.header').load('../html/base.html header',function(){
@@ -35,7 +37,7 @@ jQuery(function($){
             $(this).children('.wbApp').stop().slideUp('fast');
         });
 
-        // 切花二维码
+        // 切换二维码
         $('.wb_bot>span:first-child').on('mouseover',function(){
             $(this).css({
                 color:'#000'
@@ -92,6 +94,53 @@ jQuery(function($){
     $('.backTop').load('../html/base.html .menu',function(){
 
         $('.menu').css('height',window.innerHeight);
+        $('.carlist').css('height',window.innerHeight);
+
+        $('.menu').find('.close').click(function(){
+                 
+            $('.menu').animate({'right':'-260'});
+        })
+
+        $('.menu').find('.car').click(function(){
+
+            $('.menu').animate({'right':'0'});
+        })
+
+        
+        // 动态生成购物车列表
+        updateCar = function(){
+            let qty = 0;
+            // 获取cookie
+            var carList = Cookie.get('goodsList');
+                 
+                 
+            if(carList.length==0){
+                carList = [];
+            }else{
+                carList = $.parseJSON(carList);
+            }
+                 
+            $('.carlist').html('');
+            let res = $.map(carList,function(item){
+                qty+=item.qty;
+                return `
+                    <a href="../html/details.html?${item.gid}.html">
+                        <li class="clearfix">
+                            <img src="${item.imgUrl}"/>
+                            <p>${item.desc}</p>
+                            <p><span>￥ ${item.price}</span>&times;<i>${item.qty}</i></p>
+
+                            <a class="del">删除</a>
+                        </li>
+                    </a>`;
+            })
+            $('<ul/>').append(res).appendTo('.carlist');
+
+            // 更新购物车显示的数量
+            $('.goodsQty').text(qty);
+
+        }
+        updateCar();
 
         $('.menuList li').hover(function(){
                 
@@ -99,6 +148,7 @@ jQuery(function($){
                  
         },function(){
             $(this).children().stop().fadeOut(300);
+            $('.goodsQty').stop().fadeIn();
         });
 
         // 返回顶部

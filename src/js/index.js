@@ -1,7 +1,7 @@
 
 require(['config'],function(){
 
-    require(['jquery','base','carousel'],function($){
+    require(['jquery','base','carousel','common'],function($){
 
         $('.nav .container').carousel_c({
             "width":1200,

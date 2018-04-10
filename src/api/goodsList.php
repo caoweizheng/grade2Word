@@ -8,6 +8,7 @@
     $aroundLt = isset($_GET['aroundLt']) ? $_GET['aroundLt'] : null;
     $aroundGt = isset($_GET['aroundGt']) ? $_GET['aroundGt'] : null;
     $brand = isset($_GET['brand']) ? $_GET['brand'] : null;
+    $id = isset($_GET['id']) ? $_GET['id'] : null;
 
 
 
@@ -36,8 +37,9 @@
 
     }else if($type == 'Brands'){
         $sql  = "select * from goodsList where  `desc` like '%$brand%'";
+    }else if($type == 'Gid'){
+        $sql  = "select * from goodsList where gid >= $id limit 0,5";
     }
-
 
 
 

@@ -56,7 +56,7 @@
         <div class="search fr">
             <input id="searchVal" type="text" placeholder="搜索 品牌/系列/型号"/>
             <button class="btn_search"></button>
-            <button class="btn_car"></button>
+            <button class="btn_car"><span class="goodsQty"></span></button>
 
             <div class="recommend">
                 <p>热门推荐</p>
@@ -101,8 +101,12 @@
 </header>
 
 <div class="menu">
-    <p><h2>浏览足迹</h2></p>
-    <p>登录后将显示您之前浏览商品<a href="#">现在登录</a></p>
+    <div class="menu_car"><h2>购物车</h2> <span class="close">&times;</span></div>
+    <p class="menu_login">登录后显示您之前加入的商品<a href="#">现在登录</a></p>
+    
+    <div class="carlist">
+
+    </div>
 
     <div class="service">
         <img src="../imgs/wb_contact.png" />
@@ -119,8 +123,9 @@
 
     <div class="menuList">
         <ul>
-            <li>
-                <p>购物车</p>
+            <li class="car">
+                <p >购物车</p>
+                <span class="goodsQty"></span>
             </li>
             <li>
                 <p>我的收藏</p>

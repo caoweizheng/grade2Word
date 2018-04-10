@@ -1,0 +1,273 @@
+main {
+  margin-bottom: 30px;
+}
+
+main .title {
+  background: #F2F1EF;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+main .title a {
+  font-size: 12px;
+  color: #666560;
+}
+
+main .title .t_stores {
+  padding-right: 50px;
+  padding-left: 20px;
+  background: url(../imgs/sole.png) left 4px no-repeat;
+}
+
+main .left {
+  width: 500px;
+  height: 600px;
+}
+
+main .left .zoomBox {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+main .left .zoomBox img {
+  width: 500px;
+}
+
+main .left .smallList {
+  position: relative;
+  padding-left: 15px;
+}
+
+main .left .smallList .pick {
+  opacity: 1;
+  box-shadow: 0 0 1px 1px #eee;
+}
+
+main .left .smallList ul li {
+  float: left;
+  border: 1px solid #eee;
+  margin-right: 15px;
+  opacity: 0.6;
+}
+
+main .left .smallList ul li img {
+  width: 80px;
+}
+
+main .left .smallList ul li:hover {
+  opacity: 1;
+}
+
+main .left .smallList ul li:last-child {
+  margin-right: 0;
+}
+
+main .left .smallList span {
+  width: 20px;
+  height: 35px;
+  display: inline-block;
+  position: absolute;
+  left: -10px;
+  top: 50px;
+  transform: translateY(-60%);
+  background: url(../imgs/det_left.png);
+}
+
+main .left .smallList span:nth-of-type(2) {
+  left: 98%;
+  background: url(../imgs/det_right.png);
+}
+
+main .right {
+  width: 668px;
+}
+
+main .right .det_top {
+  margin-bottom: 10px;
+}
+
+main .right .det_top .con {
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 20px;
+}
+
+main .right .det_top .grands, main .right .det_top .colume {
+  color: #9A9791;
+  font-size: 12px;
+}
+
+main .right .det_top .grands {
+  float: left;
+}
+
+main .right .det_top .colume {
+  float: right;
+}
+
+main .right .det_center {
+  height: 100px;
+  padding: 10px 0;
+  background: #F2F1EF;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 1px 1px #eee;
+}
+
+main .right .det_center p {
+  padding-left: 25px;
+  font-size: 12px;
+}
+
+main .right .det_center p span {
+  padding-left: 18px;
+  display: inline-block;
+}
+
+main .right .det_center p .price {
+  color: #E44848;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+main .right .det_center p .stage {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+
+main .right .det_center p .voucher {
+  width: 73px;
+  background: #A56662;
+  padding: 2px 10px 2px 5px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 10px;
+  vertical-align: middle;
+  border-radius: 5px 0 0 5px;
+  position: relative;
+}
+
+main .right .det_center p .voucher::before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 0;
+  display: inline-block;
+  background: #F2F1EF;
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+}
+
+main .right .det_center p:first-child {
+  padding-left: 15px;
+}
+
+main .right .det_bottom p {
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+main .right .det_bottom .style {
+  margin-bottom: 20px;
+}
+
+main .right .det_bottom .style li {
+  float: left;
+  width: 145px;
+  padding-left: 40px;
+  display: inline-block;
+  height: 58px;
+  border: 1px solid #eee;
+  line-height: 58px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+main .right .det_bottom .style li:hover {
+  box-shadow: 0 0 1px 1px #eee;
+}
+
+main .right .det_bottom .style .styleClick {
+  border: 3px solid #666560;
+  width: 143px;
+  height: 56px;
+}
+
+main .right .det_bottom .style .styleClick::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  background: #666560;
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+}
+
+main .right .det_bottom .count {
+  line-height: 20px;
+}
+
+main .right .det_bottom .count a {
+  display: inline-block;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+main .right .det_bottom .count input {
+  vertical-align: top;
+  border: 1px solid #ccc;
+  text-align: center;
+  height: 20px;
+  width: 50px;
+}
+
+main .right .add_toCar a {
+  display: inline-block;
+  text-align: center;
+  border: 0 none;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 45px;
+  padding: 0 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+main .right .add_toCar .buy {
+  background: #E24645;
+  width: 180px;
+  color: #fff;
+}
+
+main .right .add_toCar .buy:hover {
+  opacity: 0.9;
+}
+
+main .right .add_toCar .addCar {
+  border: 1px solid #ccc;
+  color: #505245;
+  width: 120px;
+}
+
+main .right .add_toCar .addCar:hover {
+  border-color: #999;
+}
