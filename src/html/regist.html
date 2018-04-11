@@ -5,6 +5,7 @@
     </head>
     <link rel="stylesheet"  href="../css/base.css" />
     <link rel="stylesheet"  href="../css/regist.css" />
+    <script src="../js/require.js" data-main="../js/regist.js"></script>
     <body>
         <div class="minwidth">
             <header>
@@ -17,14 +18,21 @@
                 <div class="container">
                     <div class="regist_box">
                         <h1>注册万表会员</h1>
-                        <input type="tel" placeholder="请输入手机号码"/>
-                        <input type="text" placeholder="验证码"/>
-                        <input type="text" placeholder="请输入短信验证码"/>
-                        <input type="text" placeholder="请设置密码"/>
-                        <input type="text" placeholder="请再次输入密码"/>
+                        <input class="phoneNum" type="tel" placeholder="请输入手机号码"/>
+                        <div class="yzm">
+                            <input class="vCode_in" type="text" placeholder="验证码"/>
+                            <span class="VCode_show"></span>
+                        </div>
+                        <input class="vCode_phone" type="text" placeholder="请输入短信验证码"/>
+                        <input class="pass" type="password" placeholder="请设置密码"/>
+                        <input class="rePass" type="password" placeholder="请再次输入密码"/>
                         <input type="text" placeholder="如有推荐人,请填写推荐人手机号"/>
-                        <a class="regist" href="#">立即注册</a>
+                        <a class="regist">立即注册</a>
                         <p><span>点击“立即注册”，即表示您同意并愿意遵守</span>万表网用户协议</p>
+                    </div>
+
+                    <div class="tipWindow">
+                        注册成功~
                     </div>
                 </div>
             </main>

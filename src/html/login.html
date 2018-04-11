@@ -5,6 +5,7 @@
     </head>
     <link rel="stylesheet"  href="../css/base.css" />
     <link rel="stylesheet"  href="../css/login.css" />
+    <script src="../js/require.js" data-main="../js/login.js"></script>
     <body>
         <div class="minwidth">
             <header>
@@ -21,12 +22,15 @@
                             <span>扫码登录</span>
                         </header>
                         <div>
-                            <input type="text" placeholder="手机号码/会员名/邮箱" />
-                            <input type="password" placeholder="密码" />
+                            <input class="user" type="text" placeholder="手机号码/会员名/邮箱" />
+                            <input class="pass" type="password" placeholder="密码" />
 
-                            <a class="login" href="#">立即登录</a>
-                            <a class="regist" href="#">免费注册</a>
+                            <a class="login">立即登录</a>
+                            <a class="regist" href="regist.html">免费注册</a>
                             <a class="forget"href="#">忘记密码</a>
+                        </div>
+                        <div class="tipWindow">
+                            登录成功~
                         </div>
                     </section>
                 </div>

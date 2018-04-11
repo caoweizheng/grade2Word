@@ -86,16 +86,26 @@ require(['config'],function(){
 
         // 获取cookie
         var carList = Cookie.get('goodsList');   
-        console.log(carList)
                                  
         if(carList.length==0){
             carList = [];
         }else{
             carList = $.parseJSON(carList);
         }
-
+        $('.bigMask').css({
+            height:window.innerHeight,
+            width:window.innerWidth
+        })
         // 添加购物车
         $('.addCar').on('click',function(){ 
+            console.log(isLogin)
+                 
+            if(!isLogin){
+
+                //弹出登录窗口
+                $('.bigMask').show();
+                return;
+            }
                  
             let pickNum;
             let g_index;
@@ -140,6 +150,69 @@ require(['config'],function(){
             $('.t_stores').find('a').text((opt.stores));
 
         }
+
+        // 登录弹窗
+        $('.user').focus(function(){
+            // 提示词动画
+            $('.tip_user').animate({'bottom':30,'font-size':12})
+                 
+        })
+
+        $('.pass').focus(function(){
+            // 提示词动画
+            $('.tip_pass').animate({'bottom':30,'font-size':12})
+                 
+        })
+        $('.user').blur(function(){
+            if($(this).val().trim() == ''){
+                $('.tip_user').animate({'bottom':5,'font-size':16})
+
+            }
+            $('.error_tip').hide();
+                 
+        })
+
+        $('.pass').blur(function(){
+            if($(this).val().trim() == ''){
+                $('.tip_pass').animate({'bottom':5,'font-size':16})
+                $('.error_tip').hide();
+            }
+
+        })
+
+        $('.det_close').on('click',function(){
+            $('.bigMask').hide();
+        })
+
+        $('.det_login').on('click',function(){
+            console.log($('.user'))
+                 
+            // 判断输入是否为空
+            if($('.user').val().trim() == '' || $('.pass').val().trim() == ''){
+                return;
+            }
+
+            // 后台用户名密码判断
+            $.get({url:'../api/regist.php',data:{"type":"login","user":$('.user').val(),"pass":$('.pass').val()},success:function(res){
+                // 登录成功
+                if(res == 'success'){
+    
+                    // 请求修改登录状态
+                    $.get({url:'../api/isLogin.php',data:{"type":"set","status":1,"user":$('.user').val()}})
+                    isLogin = true;
+                    $('.bigMask').hide();
+                    updateLoginTab();
+                    updateCar();
+        
+                }else{
+                    // 登录失败
+                         
+                    $('.error_tip').show();
+                         
+                }
+
+            }})
+        })
            
         // 默认隐藏导航菜单
         this.timer = setInterval(()=>{

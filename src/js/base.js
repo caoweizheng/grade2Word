@@ -1,8 +1,56 @@
 
 var updateCar;
+// 登录状态
+var isLogin = false;
+var updateLoginTab ;
+// 用户名
+var user = '';
 jQuery(function($){
+    
     // header广告
     $('.header').load('../html/base.html header',function(){
+
+        // 获取登录状态
+        $.get({url:'../api/isLogin.php',data:{"type":"get"},success:function(res){
+
+            isLogin = $.parseJSON(res)[0].isLogin*1;
+
+            // 获取用户名
+              
+            user = $.parseJSON(res)[0].user;
+            if(isLogin){
+                updateLoginTab();
+                
+            }
+
+            updateCar();
+
+        }})
+
+         updateLoginTab =  function(){
+
+            $('.loginStatus').text('您好,'+user).parent().attr('href',"#");
+            $('.loginStatus').closest('li').next().find('span').text('退出');
+            $('.loginStatus').closest('li').next().find('span').parent().attr('href',"#");
+
+            // 退出
+            $('.registStatus').on('click',function(){ 
+
+                $.get({url:'../api/isLogin.php',data:{"type":"set","status":0,"user":user}})
+
+                $('.loginStatus').text('登录享优惠').parent().attr('href',"../html/login.html");
+                $('.registStatus').text('注册').parent();
+
+                setTimeout(function(){
+                    $('.registStatus').parent().attr('href',"../html/regist.html");
+                },1000)
+
+                window.location.href = window.location.href;
+                     
+
+            })
+                 
+        }
 
         $('.ad .container').css('background',"url(../imgs/wb_head_ad.jpg)");
         // 点击关闭广告
@@ -94,7 +142,7 @@ jQuery(function($){
     $('.backTop').load('../html/base.html .menu',function(){
 
         $('.menu').css('height',window.innerHeight);
-        $('.carlist').css('height',window.innerHeight);
+        $('.carlist').css('height',window.innerHeight - 100);
 
         $('.menu').find('.close').click(function(){
                  
@@ -124,31 +172,57 @@ jQuery(function($){
             let res = $.map(carList,function(item){
                 qty+=item.qty;
                 return `
-                    <a href="../html/details.html?${item.gid}.html">
                         <li class="clearfix">
-                            <img src="${item.imgUrl}"/>
+                            <a href="../html/details.html?${item.gid}.html">
+                                <img src="${item.imgUrl}"/>
+                             </a>
                             <p>${item.desc}</p>
                             <p><span>￥ ${item.price}</span>&times;<i>${item.qty}</i></p>
-
                             <a class="del">删除</a>
                         </li>
-                    </a>`;
+                   `;
             })
-            $('<ul/>').append(res).appendTo('.carlist');
+            if(isLogin){
+                $('<ul/>').append(res).appendTo('.carlist'); 
+                $('.goodsQty').show();
+                $('.menu_login').hide();
+            }else{
+                $('.menu_login').show();
+                $('.goodsQty').hide();
+            }
 
             // 更新购物车显示的数量
             $('.goodsQty').text(qty);
 
-        }
-        updateCar();
 
-        $('.menuList li').hover(function(){
-                
-            $(this).children().stop().fadeIn(300);
+            // 删除购物车商品
+            $('li').on('click','.del',function(){
+
+                // 获取要删除的商品的索引
+                let start = $(this).parent().index();
+                // 从数组中删除    
+                carList.splice(start,1);        
+
+                // 删除后更新cookie
+                document.cookie = 'goodsList='+JSON.stringify(carList)+';path=/';
+                // 更新购物车
+                updateCar();
+            })
+        }
+
+
+
+
+
+
+        // 侧边栏tab选项卡切换
+        $('.menuList li').hover(function(){ 
+            // 不显示购物车数量
+            $(this).children().not('span').stop().fadeIn(300);
                  
         },function(){
-            $(this).children().stop().fadeOut(300);
-            $('.goodsQty').stop().fadeIn();
+            // 
+            $(this).children().not('span').stop().fadeOut(300);
         });
 
         // 返回顶部

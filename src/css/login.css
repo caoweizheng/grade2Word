@@ -16,6 +16,23 @@ main .login_box {
   height: 320px;
   background: #fff;
   padding: 44px 40px 26px 40px;
+  position: relative;
+}
+
+main .login_box .tipWindow {
+  width: 200px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 1px 1px #eee;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  line-height: 80px;
+  text-align: center;
+  color: #fff;
+  display: none;
 }
 
 main .login_box header {
@@ -39,8 +56,19 @@ main .login_box input {
   width: 300px;
   height: 44px;
   border: 1px solid #ddd;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   padding-left: 10px;
+  background: #fff;
+}
+
+main .login_box .error {
+  background: url(../imgs/regist_error.png) left center no-repeat;
+  padding-left: 20px;
+  color: red;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 10px;
 }
 
 main .login_box .login {

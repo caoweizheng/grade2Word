@@ -1,3 +1,135 @@
+.bigMask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.loginBox {
+  width: 400px;
+  height: 300px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background: #fff;
+  padding: 50px;
+}
+
+.loginBox header {
+  overflow: hidden;
+}
+
+.loginBox header h2 {
+  font-size: 20px;
+  float: left;
+  margin-right: 20px;
+  color: #999;
+}
+
+.loginBox header h2:last-child {
+  color: #CC5252;
+  border-bottom: 2px solid #CC5252;
+}
+
+.loginBox div {
+  width: 360px;
+  height: 55px;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.loginBox div .error_tip {
+  width: 100px;
+  height: 30px;
+  padding: 3px;
+  background: #CC5252;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 35px;
+  left: -115px;
+  display: none;
+}
+
+.loginBox div .error_tip::after {
+  content: "";
+  width: 8px;
+  height: 10px;
+  position: absolute;
+  background: #CC5252;
+  right: -3px;
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.loginBox input {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 50px;
+  width: 360px;
+  background: transparent;
+  z-index: 11;
+}
+
+.loginBox span {
+  padding-top: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  z-index: 10;
+  color: #aaa;
+}
+
+.loginBox .det_login {
+  display: block;
+  width: 360px;
+  height: 40px;
+  background: #CC5252;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+}
+
+.loginBox .det_bot {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  border: 0 none;
+}
+
+.loginBox .det_bot a {
+  font-size: 12px;
+  color: #ccc;
+  margin-right: 20px;
+}
+
+.loginBox .det_close {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  font-weight: 300;
+  font-size: 40px;
+  left: 90%;
+  top: 10px;
+  cursor: pointer;
+  color: #000;
+  transition: all 1s;
+  transform-origin: 45% 55%;
+}
+
+.loginBox .det_close:hover {
+  transform: rotate(360deg);
+}
+
 main {
   margin-bottom: 30px;
 }
