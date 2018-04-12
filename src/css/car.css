@@ -1,0 +1,319 @@
+nav, .logo {
+  display: none;
+}
+
+.logo2 {
+  margin: 10px 0;
+}
+
+.logo2 h1 {
+  height: 76px;
+  width: 473px;
+  background: url(../imgs/wb_logo.png);
+}
+
+.process {
+  padding-right: 100px;
+  padding-top: 30px;
+}
+
+.process ul {
+  border-bottom: 1px solid #ccc;
+}
+
+.process ul li {
+  float: left;
+  margin-top: -5px;
+  margin-right: 60px;
+  text-align: center;
+  width: 100px;
+  position: relative;
+}
+
+.process ul li p {
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.process ul li span {
+  font-size: 12px;
+  color: #999;
+}
+
+.process ul li:nth-of-type(1) p {
+  float: left;
+  width: 20px;
+  height: 20px;
+  border-color: #E44848;
+  line-height: 20px;
+  margin-top: -5px;
+  background: #E44848;
+}
+
+.process ul li:first-child span {
+  position: absolute;
+  left: -3px;
+  top: 26px;
+  color: #E44848;
+}
+
+.process ul li:last-child span {
+  width: 100px;
+  position: absolute;
+  left: 44px;
+  top: 26px;
+  color: #999;
+}
+
+.process ul li:last-child {
+  margin-right: 0;
+}
+
+.process ul li:nth-of-type(4) p {
+  margin-right: 0;
+  float: right;
+}
+
+.nogoods {
+  width: 300px;
+  height: 100px;
+  margin: 100px auto;
+  text-align: center;
+  display: none;
+}
+
+.nogoods h2 {
+  font-size: 25px;
+}
+
+.nogoods a {
+  color: blue;
+  border: 0 none;
+  width: 50px;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.empty_car {
+  display: none;
+}
+
+.empty_car .container {
+  padding-top: 100px;
+  width: 220px;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.empty_car .container h2 {
+  font-size: 20px;
+  margin: 10px 0 5px 0;
+  color: #535353;
+}
+
+.empty_car .container p {
+  font-size: 13px;
+  color: #999;
+}
+
+.empty_car .container p a {
+  color: blue;
+  text-decoration: underline;
+  margin: 0 2px;
+}
+
+.myCar {
+  margin-bottom: 100px;
+}
+
+.myCar h2 {
+  font-size: 14px;
+}
+
+.myCar input[type="checkbox"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.myCar .thead {
+  background: #F6F5F4;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.myCar .title {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  background: #F6F5F4;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+
+.myCar .title input {
+  height: 19px;
+}
+
+.myCar .title p {
+  font-size: 14px;
+}
+
+.myCar .tbodyBox {
+  border: 1px solid #ddd;
+  padding: 0 0 10px 0px;
+}
+
+.myCar .tbodyBox .tbody .content {
+  padding-left: 10px;
+  border-bottom: 1px dashed #ddd;
+  margin-bottom: 10px;
+}
+
+.myCar .tbodyBox .tbody .content dt {
+  padding-top: 30px;
+}
+
+.myCar dl {
+  overflow: hidden;
+  float: left;
+}
+
+.myCar dl dt {
+  float: left;
+}
+
+.myCar dl dd {
+  float: left;
+  width: 256px;
+}
+
+.myCar dl dd p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myCar dl dd img {
+  width: 87px;
+}
+
+.myCar dl dd:nth-of-type(2) {
+  text-align: center;
+}
+
+.myCar dl dd:nth-of-type(2) p {
+  font-size: 14px;
+  color: #999;
+}
+
+.myCar ul {
+  overflow: hidden;
+}
+
+.myCar ul li {
+  float: left;
+  width: 160px;
+  text-align: center;
+}
+
+.myCar ul .price {
+  font-size: 13px;
+  font-weight: 600;
+  color: #999;
+}
+
+.myCar ul .mintotal {
+  font-size: 15px;
+  font-weight: 900;
+  color: #000;
+}
+
+.myCar ul .tbody_del a {
+  border: 0 none;
+  width: 30px;
+  color: #999;
+}
+
+.myCar ul .desc, .myCar ul .img {
+  width: 256px;
+}
+
+.myCar .tfoot {
+  height: 53px;
+  background: #F6F5F4;
+  line-height: 53px;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+.myCar .tfoot .allpick {
+  font-size: 13px;
+}
+
+.myCar .tfoot .tfoot_del {
+  padding-left: 20px;
+}
+
+.myCar .tfoot .tfoot_del a {
+  width: 30px;
+  border: 0 none;
+}
+
+.myCar .tfoot .pickQty {
+  font-size: 14px;
+}
+
+.myCar .tfoot .total {
+  font-size: 28px;
+  font-weight: 700;
+  margin-left: 500px;
+}
+
+.myCar .tfoot #process {
+  float: right;
+  background: #E44848;
+  width: 140px;
+  height: 53px;
+  line-height: 0;
+  line-height: 53px;
+  text-align: center;
+}
+
+.myCar .tfoot #process span {
+  width: 50px;
+  height: 20px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: 0 none;
+  cursor: pointer;
+}
+
+.myCar li input[type="text"] {
+  width: 30px;
+  border: 1px solid #ddd;
+  height: 17px;
+  vertical-align: top;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.myCar li a {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #ddd;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  font-size: 12px;
+}

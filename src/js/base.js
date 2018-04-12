@@ -6,27 +6,33 @@ var updateLoginTab ;
 // 用户名
 var user = '';
 jQuery(function($){
+    $(document).on('mousemove',function(event){
+        event.preventDefault();
+    })
     
     // header广告
-    $('.header').load('../html/base.html header',function(){
+    $('.header').load('../html/base.html header',function(event){
 
         // 获取登录状态
         $.get({url:'../api/isLogin.php',data:{"type":"get"},success:function(res){
 
+
             isLogin = $.parseJSON(res)[0].isLogin*1;
 
             // 获取用户名
-              
+                 
             user = $.parseJSON(res)[0].user;
             if(isLogin){
                 updateLoginTab();
                 
             }
-
-            updateCar();
+            if(updateCar){
+                updateCar();
+            }
 
         }})
-
+        $('.loginStatus').parent().attr('href',"../html/login.html?"+window.location.href);
+            
          updateLoginTab =  function(){
 
             $('.loginStatus').text('您好,'+user).parent().attr('href',"#");
@@ -38,7 +44,7 @@ jQuery(function($){
 
                 $.get({url:'../api/isLogin.php',data:{"type":"set","status":0,"user":user}})
 
-                $('.loginStatus').text('登录享优惠').parent().attr('href',"../html/login.html");
+                $('.loginStatus').text('登录享优惠').parent().attr('href',"../html/login.html?"+window.location.href);
                 $('.registStatus').text('注册').parent();
 
                 setTimeout(function(){
@@ -154,10 +160,11 @@ jQuery(function($){
             $('.menu').animate({'right':'0'});
         })
 
-        
+        $('.nowLogin').attr('href',"../html/login.html?"+window.location.href);
         // 动态生成购物车列表
         updateCar = function(){
             let qty = 0;
+            let total = 0;
             // 获取cookie
             var carList = Cookie.get('goodsList');
                  
@@ -170,7 +177,8 @@ jQuery(function($){
                  
             $('.carlist').html('');
             let res = $.map(carList,function(item){
-                qty+=item.qty;
+                qty+=item.qty*1;
+                total += item.price*qty;
                 return `
                         <li class="clearfix">
                             <a href="../html/details.html?${item.gid}.html">
@@ -185,14 +193,18 @@ jQuery(function($){
             if(isLogin){
                 $('<ul/>').append(res).appendTo('.carlist'); 
                 $('.goodsQty').show();
+                $('.clearing').show();
                 $('.menu_login').hide();
             }else{
                 $('.menu_login').show();
                 $('.goodsQty').hide();
+                $('.clearing').hide();
             }
 
             // 更新购物车显示的数量
             $('.goodsQty').text(qty);
+            $('.carQty').text(qty+'件商品');
+            $('.carTotal').text('￥'+total);
 
 
             // 删除购物车商品
@@ -205,6 +217,7 @@ jQuery(function($){
 
                 // 删除后更新cookie
                 document.cookie = 'goodsList='+JSON.stringify(carList)+';path=/';
+                
                 // 更新购物车
                 updateCar();
             })
@@ -283,7 +296,5 @@ jQuery(function($){
 
             $('.right .r2').find('img').attr('src','../imgs/wb_fot_dyh.png');
         })
-             
-             
     })
 });

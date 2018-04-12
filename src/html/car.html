@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <link rel="stylesheet"  href="../css/base.css" />
+    <link rel="stylesheet"  href="../css/car.css" />
+    <script src="../js/require.js" data-main="../js/car.js"></script>
+    <body>
+    <div class="minwidth">
+        <div class="header"></div>
+        <div class="logo2">
+            <div class="container clearfix">
+                <h1 class="fl"></h1>
+                
+                <div class="process fr">
+                    <ul>
+                        <li>
+                            <p></p>
+                            <span>购物车</span>
+                        </li>
+                        <li>
+                            <p></p>
+                            <span>填写订单信息</span>
+                        </li>
+                        <li>
+                            <p></p>
+                            <span>支付订单</span>
+                        </li>
+                        <li>
+                            <p></p>
+                            <span>等待签收</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>    
+
+        </div>
+        <main class="empty_car">
+           <div class="container">
+                <img src="../imgs/car_car.png" alt="" />
+                <h2>您的购物车还是空的</h2>
+                <p>现在<a href="#">登录</a>,购物车信息将一直为您保存</p>
+           </div>
+        </main>
+
+        <div class="nogoods">
+            <h2>啥都没有!赶紧去<a href="list.html">购物</a>吧~~~</h2>
+        </div>
+
+        <main class="myCar">
+            
+            <div class="container">
+                
+                <h2>全部商品(2)</h2>
+
+                <div class="table">
+                    <div class="thead clearfix">
+                        <dl>
+                            <dt><input class="checkAll" type="checkbox" /></dt>
+                            <dd>全选</dd>
+                            <dd>商品信息</dd>
+                        </dl>
+
+                        <ul>
+                            <li>单价</li>
+                            <li>数量</li>
+                            <li>小计</li>
+                            <li>操作</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tbodyBox">
+    
+                    </div>
+                    <div class="tfoot clearfix">
+                        <dl>
+                            <dt class="allpick"><input class="checkAll" type="checkbox" />全选</dt>
+                            <dd class="tfoot_del"><a href="#">删除</a></dd>
+                        </dl>
+                           
+                        <ul>
+                            <li class="total"> 合计$2564</li>
+                            <li id="process">
+                                <span>结算</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <div class="footer"></div>
+
+
+    </div>
+    </body>
+</html>

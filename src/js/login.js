@@ -12,9 +12,22 @@ require(['config'],function(){
                         $(this).fadeOut(500,function(){
                             // 请求修改登录状态
                             $.get({url:'../api/isLogin.php',data:{"type":"set","status":1,"user":$('.user').val()}})
-                            window.location.href = '../index.html';
+                            if((window.location.search).length<4){
+                                window.location.href = '../index.html';
+                            }else{
+                                window.location.href = window.location.search.slice(1);
+                                
+                            }
                         });
                     })
+
+                    // 获取当前用户的购物车信息
+                    $.get({url:'../api/carList.php',data:{"type":"get","user":$('.user').val()},success:function(res){      
+                        // alert(JSON.stringify(res))
+                                                                       
+                            document.cookie = 'goodsList='+res+';path=/';
+
+                    }})
                          
                 }else{
                     $('.user').next('p').remove();

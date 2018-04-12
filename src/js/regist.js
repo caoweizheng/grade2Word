@@ -6,7 +6,7 @@ require(['config'],function(){
 
         // 点击注册
         $('.regist').on('click',function(){
-
+             
             if(isRegist.length == 0){
                 return false;
             }else{
@@ -17,10 +17,12 @@ require(['config'],function(){
                 })
 
                 if(isOk){
+                         
                     $.get({url:'../api/regist.php',data:{"type":"add","user":$('.phoneNum').val(),"pass":$('.pass').val()},success:function(res){
                         //验证手机号码是否已经注册
+                            console.log(res)
                         if(res == 'success'){
-
+                                 
                             // 注册成功
                             
                             $('.tipWindow').fadeIn(500,function(){

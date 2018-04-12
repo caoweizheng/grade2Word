@@ -98,7 +98,7 @@ require(['config'],function(){
         })
         // 添加购物车
         $('.addCar').on('click',function(){ 
-            console.log(isLogin)
+            // console.log(isLogin)
                  
             if(!isLogin){
 
@@ -121,19 +121,46 @@ require(['config'],function(){
             })
             if(has){
                 carList[g_index].qty += $('.qty')[0].value*1;
+                Savefordb(data[pickNum],"update")
                      
             }else{
                 // 添加之前判断是否添加的是否同一个商品
                 data[pickNum].qty += $('.qty')[0].value*1;
                 carList.push(data[pickNum]);
+                Savefordb(data[pickNum],"insert")
                      
             }
             // 添加
             document.cookie = 'goodsList='+JSON.stringify(carList)+';path=/';
+
+
                          
                  
             updateCar();
         })
+
+        function Savefordb(goods,type){
+            console.log(goods)
+                 
+
+            $.get({url:'../api/carList.php',data:{
+                "type":type,
+                "gid":goods.gid,
+                "imgUrl":goods.imgUrl,
+                "desc":goods.desc,
+                "price":goods.price,
+                "qty":goods.qty,
+                "special":goods.special,
+                "stores":goods.stores,
+                "volume":goods.volume,
+                "user":user
+            },success:function(res){
+                console.log(res)
+                     
+
+            }})
+                 
+        }
 
 
         // 更新商品详情信息
@@ -141,7 +168,7 @@ require(['config'],function(){
 
             $('.zoomBox').children().attr({'src':opt.imgUrl,'data-big':opt.imgUrl});
             $('.con').text(opt.desc);
-            $('.grands').text('品牌:   '+(opt.stores).slice(0,-3));
+            $('.grands').text('品牌:   '+(opt.stores));
             $('.colume').text('销量:   '+opt.volume);
             $('.price').text('￥'+opt.price);
             $('.stage').text('每月'+(opt.price/12).toFixed(0)+'元×12期');
@@ -213,6 +240,10 @@ require(['config'],function(){
 
             }})
         })
+
+
+
+        
            
         // 默认隐藏导航菜单
         this.timer = setInterval(()=>{

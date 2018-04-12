@@ -459,10 +459,10 @@ float: left;
   background:#E9E9E9;
   border-left:2px solid #666560;
   .menu_car{
-    background:#FFFFD9;
+    background:#fff;
     overflow: hidden;
     padding: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     h2{
         float: left;
         font-size:15px;
@@ -534,6 +534,39 @@ float: left;
   }
   .carlist::-webkit-scrollbar{
     width:0px;
+  }
+
+  .clearing{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    width: 232px;
+    height: 50px;
+    background:#fff;
+    padding: 10px 10px 0 15px;
+    box-shadow:1px 0 1px 1px #ccc;
+    div{
+      float: left;
+      p{
+        font-size:13px;
+      }
+      p:first-child{
+        color:#999;
+        margin-bottom: 5px;
+      }
+      p:last-child{
+        color:#CC5252;
+        font-weight:600;
+      }
+    }
+    a{
+      float: right;
+      padding: 12px 20px;
+      font-size:12px;
+      color:#fff;
+      background:#CC5252;
+      border-radius:20px;
+    }
   }
 
   .service{

@@ -477,10 +477,10 @@ s, i, em {
 }
 
 .menu .menu_car {
-  background: #FFFFD9;
+  background: #fff;
   overflow: hidden;
   padding: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .menu .menu_car h2 {
@@ -559,6 +559,44 @@ s, i, em {
 
 .menu .carlist::-webkit-scrollbar {
   width: 0px;
+}
+
+.menu .clearing {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 232px;
+  height: 50px;
+  background: #fff;
+  padding: 10px 10px 0 15px;
+  box-shadow: 1px 0 1px 1px #ccc;
+}
+
+.menu .clearing div {
+  float: left;
+}
+
+.menu .clearing div p {
+  font-size: 13px;
+}
+
+.menu .clearing div p:first-child {
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.menu .clearing div p:last-child {
+  color: #CC5252;
+  font-weight: 600;
+}
+
+.menu .clearing a {
+  float: right;
+  padding: 12px 20px;
+  font-size: 12px;
+  color: #fff;
+  background: #CC5252;
+  border-radius: 20px;
 }
 
 .menu .service {
