@@ -87,7 +87,8 @@ require(['config'],function(){
 
             if(!isRegist[2]){
                 $('.vCode_phone').next('p').remove();
-                $('.vCode_phone').after(createTip('请输入正确验证码'))
+                $('.vCode_phone').after(createTip('输入错误也没关系哟!'))
+                isRegist[2] = true;
             }else{
                 $('.vCode_phone').next('p').remove();
             }

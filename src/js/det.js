@@ -24,7 +24,7 @@ require(['config'],function(){
             let smallImgs = $.map(data,function(item){
 
                 // 给商品添加数量属性
-                item.qty = 0;
+                item.qty = 1;
                      
 
                 return `<li>
@@ -125,42 +125,20 @@ require(['config'],function(){
                      
             }else{
                 // 添加之前判断是否添加的是否同一个商品
-                data[pickNum].qty += $('.qty')[0].value*1;
+                data[pickNum].qty = $('.qty')[0].value*1;
                 carList.push(data[pickNum]);
                 Savefordb(data[pickNum],"insert")
                      
             }
             // 添加
             document.cookie = 'goodsList='+JSON.stringify(carList)+';path=/';
+            
 
 
                          
                  
             updateCar();
         })
-
-        function Savefordb(goods,type){
-            console.log(goods)
-                 
-
-            $.get({url:'../api/carList.php',data:{
-                "type":type,
-                "gid":goods.gid,
-                "imgUrl":goods.imgUrl,
-                "desc":goods.desc,
-                "price":goods.price,
-                "qty":goods.qty,
-                "special":goods.special,
-                "stores":goods.stores,
-                "volume":goods.volume,
-                "user":user
-            },success:function(res){
-                console.log(res)
-                     
-
-            }})
-                 
-        }
 
 
         // 更新商品详情信息

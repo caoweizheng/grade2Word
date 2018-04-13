@@ -62,18 +62,18 @@
 
                  // 鼠标移入移出
                  $(document).on('mouseenter','.mask',function(){
-                    $bigImg.fadeIn(200);
-                    $zoom.show();
+                    $bigImg.stop().fadeIn(200);
+                    $zoom.stop().show();
                  }).on('mouseleave','.mask',function(){
-                    $bigImg.fadeOut(200);
-                    $zoom.hide();
+                    $bigImg.stop().fadeOut();
+                    $zoom.stop().hide();
                  }).on('mousemove','.mask',function(event){
                          
-                    // 如果鼠标在小图之外
+                 
                     // 隐藏放大镜和大图
                     if(event.target.className != 'mask'){
-                        $bigImg.fadeOut(200);
-                        $zoom.hide();
+                        $bigImg.stop().fadeOut(0);
+                        $zoom.stop().hide();
 
                         return;
                     }

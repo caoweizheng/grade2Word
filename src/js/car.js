@@ -158,7 +158,11 @@ require(['config'],function(){
                     $(this).next().val(qty);
                     let price = $(this).closest('ul').find('.price').text().trim().slice(1);
                     $(this).closest('ul').find('.mintotal').text('￥'+price*qty);
+
+
+
                     updateCookie(idx,qty);
+
                     getTotal();
 
                 })
@@ -195,9 +199,11 @@ require(['config'],function(){
                     let idx = $(this).closest('ul').data('idx')-1;
 
 
-
+                    //从数据库中删除
+                    Savefordb(carList[idx],'del');
+                    // 从数组中删除
                     carList.splice(idx,1);
-
+                    // 更新cookie
                     document.cookie = 'goodsList='+JSON.stringify(carList)+';path=/';
                     updateGoods();
                     updateCar();
@@ -209,6 +215,7 @@ require(['config'],function(){
 
                     carList[idx].qty = qty;
                     document.cookie = 'goodsList='+JSON.stringify(carList)+';path=/';
+                    Savefordb(carList[idx],'update');
 
                 }
                 

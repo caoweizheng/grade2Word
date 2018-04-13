@@ -3,6 +3,7 @@ var updateCar;
 // 登录状态
 var isLogin = false;
 var updateLoginTab ;
+var Savefordb;
 // 用户名
 var user = '';
 jQuery(function($){
@@ -19,16 +20,24 @@ jQuery(function($){
 
             isLogin = $.parseJSON(res)[0].isLogin*1;
 
-            // 获取用户名
-                 
+            // 获取用户名                
             user = $.parseJSON(res)[0].user;
             if(isLogin){
-                updateLoginTab();
+
+                // 根据用户名获取当前用户的购物车信息
+                $.get({url:'../api/carList.php',data:{"type":"get","user":user},success:function(res){ 
+                    //更新cookie                                           
+                    document.cookie = 'goodsList='+res+';path=/';
+                    // 更新导航栏
+                    updateLoginTab();
+                     if(updateCar){
+                        // 更新购物车
+                        updateCar();
+                    }
+                }})
                 
             }
-            if(updateCar){
-                updateCar();
-            }
+           
 
         }})
         $('.loginStatus').parent().attr('href',"../html/login.html?"+window.location.href);
@@ -72,6 +81,29 @@ jQuery(function($){
 
         SearchEvent();
     });
+
+    Savefordb = function(goods,type){  
+
+        console.log(goods,type,user)
+             
+        $.get({url:'../api/carList.php',data:{
+            "type":type,
+            "gid":goods.gid,
+            "imgUrl":goods.imgUrl,
+            "desc":goods.desc,
+            "price":goods.price,
+            "qty":goods.qty,
+            "special":goods.special,
+            "stores":goods.stores,
+            "volume":goods.volume,
+            "user":user
+        },success:function(res){
+            console.log(res)
+                 
+
+        }})
+         
+}
     // 顶部万表app动画
     function moveToApp(){
              
@@ -212,6 +244,8 @@ jQuery(function($){
 
                 // 获取要删除的商品的索引
                 let start = $(this).parent().index();
+                //从数据库中删除
+                 Savefordb(carList[start],'del');
                 // 从数组中删除    
                 carList.splice(start,1);        
 

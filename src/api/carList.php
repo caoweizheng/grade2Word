@@ -17,13 +17,13 @@
     // 添加购物车商品
     if($type == 'insert'){
         $sql  = "insert into carList(user,gid,imgUrl,`desc`,price,qty,special,stores,volume) values('$user','$gid','$imgUrl','$desc','$price',$qty,'$special','$stores','$volume')";
-        $conn->query($sql);
-        echo 1;
+        $res = $conn->query($sql);
+        echo $res;
     // 修改购物车商品
     }else if($type == 'update'){
         $sql  = "update carList set qty = $qty where gid = '$gid'";
         $res = $conn->query($sql);
-        echo 2;
+        echo $res;
     // 获取购物车商品
     }else if($type == 'get'){
         $sql  = "select * from carList where user = '$user'";
@@ -34,6 +34,7 @@
     }else if($type == 'del'){
         $sql  = "delete from carList where gid = '$gid'";
         $res = $conn->query($sql);
+        echo $res;
     }
     
  ?>
