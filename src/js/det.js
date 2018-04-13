@@ -120,7 +120,9 @@ require(['config'],function(){
                 return goods.gid == data[pickNum].gid;
             })
             if(has){
-                carList[g_index].qty += $('.qty')[0].value*1;
+                let num = carList[g_index].qty;
+                num = Number(num)+($('.qty')[0].value*1)
+                carList[g_index].qty = num;
                 Savefordb(data[pickNum],"update")
                      
             }else{
