@@ -11,11 +11,11 @@ let sass = require('gulp-sass');//fn
 // sass->css
 gulp.task('compileSass',function(){
 	// 先查找sass文件所在目录
-	gulp.src('./src/sass/*.scss') // 返回文件流（液体，文件在内存中的状态）
-
-	// scss->css
-	.pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
-
+	gulp.src('./src/sass/*.scss') // 返回文件流（液体，文件在内存中的状态）  
+    // .pipe(concat('concat.scss'))  
+    // scss->css
+    .pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
+    // .pipe(rename({suffix:'.min'}))
 	// 输出到硬盘
 	.pipe(gulp.dest('./src/css/'))
 });
@@ -29,7 +29,8 @@ gulp.task('jtSass',function(){
 let concat = require('gulp-concat');
 let uglify = require('gulp-uglify');
 let rename = require('gulp-rename');
-
+// let pump = require('pump');
+let babel = require('gulp-babel');
 // js文件 
 // 合并
 // 压缩
@@ -38,27 +39,38 @@ gulp.task('concat',function(){
 
     gulp.src('./src/js/*.js')
     // 合并
-    .pipe(concat('index.js'))
+    .pipe(concat('concat.js'))
+    // 转换
+    .pipe(babel({
+            presets: ['es2015']
+        }))
+
     //写入
-    .pipe(gulp.dest('./src/dist/js'))
+    .pipe(gulp.dest('./dist/js'))
     // 压缩
     .pipe(uglify())
     // 重命名
     .pipe(rename({suffix:'.min'}))
     // 写入
-    .pipe(gulp.dest('./src/dist/js'))
-
+    .pipe(gulp.dest('./dist/js'));
 });
+
+
+
 let htmlmin = require('gulp-htmlmin');
 
 // html压缩
 gulp.task('compressHtml',function(){
 
-    gulp.src('./src/html/*.html')
+    gulp.src('./src/**/*.html')
+
+    .pipe(concat('concat.html'))
+
+    .pipe(rename({suffix:'.min'}))
 
     .pipe(htmlmin({collapseWhitespace: true}))
 
-    .pipe(gulp.dest('./src/dist/html'))
+    .pipe(gulp.dest('./dist/html'))
 });
 
 

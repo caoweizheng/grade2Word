@@ -23,7 +23,7 @@ require(['config'],function(){
 
                     // 获取当前用户的购物车信息
                     $.get({url:'../api/carList.php',data:{"type":"get","user":$('.user').val()},success:function(res){      
-                        // alert(JSON.stringify(res))
+                        // alert(res)
                                                                        
                             document.cookie = 'goodsList='+res+';path=/';
 

@@ -209,7 +209,7 @@ s, i, em {
           }
           /* 万表网app */
           .wbApp{
-              @extend %slid;
+            @extend %slid;
             height: 220px;
 
             img{
@@ -273,6 +273,7 @@ s, i, em {
           }
 
         }
+
         li:nth-of-type(4) a,
         li:nth-of-type(6) a{
           padding: 2px;
@@ -303,6 +304,14 @@ s, i, em {
           padding-bottom: 7px;
           border:1px solid transparent;
         }
+        li:nth-of-type(2) a{
+          padding-top: 0;
+        }
+        li:nth-of-type(2) a span{
+          padding: 8px 0 ;
+          border-right:0 none;
+        }
+
         li:hover a span{
           color:#000;
           cursor:pointer;

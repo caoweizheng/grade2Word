@@ -3,14 +3,19 @@ require(['config'],function(){
 
     require(['jquery','base','carousel','common'],function($){
 
+        // 轮播图
         $('.nav .container').carousel_c({
             "width":1200,
             "height":430,
             "index":0,
+            //  淡入淡出
             "type":'fade',
+            // 触摸时是否滚动
             "touch":true,
+            // 是否分页,分页时的样式
             "className":['page','active'],
             "imgs":['../imgs/wb_carousel1.jpg','../../imgs/wb_carousel2.jpg','../imgs/wb_carousel3.jpg','../imgs/wb_carousel4.jpg','../imgs/wb_carousel5.jpg','../imgs/wb_carousel6.jpg','../imgs/wb_carousel7.jpg'],
+            // 左右切换的图标
             "btnImg":['../imgs/wb_l1.png','../imgs/wb_r1.png']
         });
 
@@ -26,6 +31,9 @@ require(['config'],function(){
         xhr.onload = ()=>{
 
             if(status.includes(xhr.status)){
+                // 获取到数据库中的首页中的全部图片
+                // 根据索引值切割获取到对应模块的图片
+                // 再动态生成对应的html结构
 
                 let res =  $.parseJSON(xhr.responseText);
 

@@ -309,6 +309,15 @@ s, i, em {
   border: 1px solid transparent;
 }
 
+.msg_useropt .container .useropt ul li:nth-of-type(2) a {
+  padding-top: 0;
+}
+
+.msg_useropt .container .useropt ul li:nth-of-type(2) a span {
+  padding: 8px 0;
+  border-right: 0 none;
+}
+
 .msg_useropt .container .useropt ul li:hover a span {
   color: #000;
   cursor: pointer;

@@ -81,6 +81,7 @@ main .login_box .login {
   color: #fff;
   background: #CC5252;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 main .login_box .regist, main .login_box .forget {
