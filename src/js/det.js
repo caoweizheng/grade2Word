@@ -144,7 +144,8 @@ require(['config'],function(){
                 // 添加之前判断是否添加的是否同一个商品
                 data[pickNum].qty = $('.qty')[0].value*1;
                 carList.push(data[pickNum]);
-                Savefordb(carList[g_index],"insert")
+                Savefordb(data[pickNum],"insert")
+                     
                      
             }
             // 添加

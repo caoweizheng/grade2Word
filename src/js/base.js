@@ -34,6 +34,8 @@ jQuery(function($){
 
                 // 根据用户名请求获取当前用户的购物车信息
                 $.get({url:'../api/carList.php',data:{"type":"get","user":user},success:function(res){ 
+                    
+                    // console.log(res)
                          
                     //将获取的信息更新cookie                                           
                     document.cookie = 'goodsList='+res+';path=/';

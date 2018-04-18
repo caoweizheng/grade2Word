@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-04-13 17:16:31
+Date: 2018-04-16 19:36:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,17 +34,16 @@ CREATE TABLE `carlist` (
 -- ----------------------------
 -- Records of carlist
 -- ----------------------------
-INSERT INTO `carlist` VALUES ('cc', '34', '../imgs/wb_list_g26.png', '法国总统夫人之选 法国优雅腕表品牌：赫柏林Michel Herbelin-Classiques 经典系列 12443/P08GO 男士', '2275', '1', '', '赫柏林官方旗舰店', '3010');
-INSERT INTO `carlist` VALUES ('cc', '35', '../imgs/wb_list_g27.png', '【帅气商务款，最新到货！】瑞士柏高Paul Picot -梦想家 商务休闲 P4104.SG.1021.1106 机械男表', '10290', '2', '畅销款式', '柏高官方旗舰店', '1303');
-INSERT INTO `carlist` VALUES ('cc', '8', '../imgs/wb_list_g8.png', '黑蛟龙！瑞士进口 迪沃斯DAVOSA-Diving 潜水系列 Ternos特勒斯 HC/200-黑 16155550 机械潜水、商务', '4640', '4', '热卖畅销款', '迪沃斯官方旗舰店', '4118');
-INSERT INTO `carlist` VALUES ('cc', '6', '../imgs/wb_list_g6.png', '【商务简约款】瑞士库尔沃CYS-Historiador 历史学家系列 pequenos segundos 3195.1CS.AR 机械男表', '12400', '2', '限时特惠', '库尔沃官方旗舰店', '211');
-INSERT INTO `carlist` VALUES ('cc', '40', '../imgs/wb_list_g32.png', '【莫勒-帆船白 412手表节爆款，预计5月中旬陆续发出】来自德国格拉苏蒂·莫勒Muehle·Glashuet', '6688', '4', '412手表节爆款', '莫勒官方旗舰店', '879');
-INSERT INTO `carlist` VALUES ('13427431482', '12', '../imgs/wb_list_g12.png', '库尔沃宝玑逆跳款：瑞士库尔沃CYS-Historiador 历史学家系列 Retrogrado 3194.1A(黑色表带) 机械男', '28800', '3', '28800元一口价', '库尔沃官方旗舰店', '456');
-INSERT INTO `carlist` VALUES ('13427431482', '13', '../imgs/wb_list_g13.png', '绿蛟龙！瑞士迪沃斯(DAVOSA)-Diving 潜水系列 Ternos特勒斯 HC/200-绿 16155570 机械男表', '4640', '6', '热卖畅销款', '迪沃斯官方旗舰店', '4998');
+INSERT INTO `carlist` VALUES ('cc', '1', '../imgs/wb_list_g1.png', '全新升级！天梭TISSOT-力洛克系列T006.407.11.033.00 自动机械男表', '3420', '2', '80小时动储', '天梭旗舰店', '7851');
+INSERT INTO `carlist` VALUES ('cc', '2', '../imgs/wb_list_g2.png', '瑞士艺术制表大师爱宝时（EPOS）-Emotion情感系列 罗马假期-水蓝版 3390.152.20.16.25 机械男表高性价比瑞表', '5770', '1', '高性价比瑞表', '爱宝时官方旗舰店', '7620');
+INSERT INTO `carlist` VALUES ('cc', '6', '../imgs/wb_list_g6.png', '【商务简约款】瑞士库尔沃CYS-Historiador 历史学家系列 pequenos segundos 3195.1CS.AR 机械男表', '12400', '8', '限时特惠', '库尔沃官方旗舰店', '211');
+INSERT INTO `carlist` VALUES ('cc', '5', '../imgs/wb_list_g5.png', '【飞行员款追加订货中，预计5月中旬到货】格拉苏蒂·莫勒Muehle·Glashuette-Sporty Instrument Watch', '7388', '4', '一口价7388元', '莫勒官方旗舰店', '344');
+INSERT INTO `carlist` VALUES ('cc', '10', '../imgs/wb_list_g10.png', '法国总统夫人之选 法国优雅腕表品牌：赫柏林Michel Herbelin-City 都市系列 -法国绅士- 1669/07GO', '4350', '5', '限量送钢带', '赫柏林官方旗舰店', '5305');
+INSERT INTO `carlist` VALUES ('13427431482', '12', '../imgs/wb_list_g12.png', '库尔沃宝玑逆跳款：瑞士库尔沃CYS-Historiador 历史学家系列 Retrogrado 3194.1A(黑色表带) 机械男', '28800', '4', '28800元一口价', '库尔沃官方旗舰店', '456');
+INSERT INTO `carlist` VALUES ('13427431482', '13', '../imgs/wb_list_g13.png', '绿蛟龙！瑞士迪沃斯(DAVOSA)-Diving 潜水系列 Ternos特勒斯 HC/200-绿 16155570 机械男表', '4640', '7', '热卖畅销款', '迪沃斯官方旗舰店', '4998');
 INSERT INTO `carlist` VALUES ('13427431482', '33', '../imgs/wb_list_g25.png', '法国总统夫人之选 法国优雅腕表品牌：赫柏林Michel Herbelin-Salambo 永恒系列 -Michel小姐- 17001/B', '2480', '2', '限量赠送5年联保卡', '赫柏林官方旗舰店', '2857');
 INSERT INTO `carlist` VALUES ('13427431482', '11', '../imgs/wb_list_g11.png', '天梭TISSOT-力洛克系列 T006.407.11.053.00 机械男表', '3420', '5', '4.12手表节', '天梭旗舰店', '5313');
-INSERT INTO `carlist` VALUES ('cc', '4', '../imgs/wb_list_g4.png', '瑞士进口 迪沃斯（DAVOSA）-Classic Quartz 经典系列 16246615 男士商务、石英表', '1580', '1', '', '迪沃斯官方旗舰店', '6958');
-INSERT INTO `carlist` VALUES ('13427431482', '31', '../imgs/wb_list_g23.png', '法国总统夫人之选 法国优雅腕表品牌：赫柏林Michel Herbelin-Perles 珍珠系列 -雅典娜女神- 16873', '5440', '3', '', '赫柏林官方旗舰店', '3317');
+INSERT INTO `carlist` VALUES ('13427431482', '31', '../imgs/wb_list_g23.png', '法国总统夫人之选 法国优雅腕表品牌：赫柏林Michel Herbelin-Perles 珍珠系列 -雅典娜女神- 16873', '5440', '2', '', '赫柏林官方旗舰店', '3317');
 
 -- ----------------------------
 -- Table structure for goodshistory
@@ -221,7 +220,7 @@ CREATE TABLE `islogin` (
 -- ----------------------------
 -- Records of islogin
 -- ----------------------------
-INSERT INTO `islogin` VALUES ('1', 'cc');
+INSERT INTO `islogin` VALUES ('1', '13427431482');
 
 -- ----------------------------
 -- Table structure for user
